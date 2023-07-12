@@ -13,13 +13,6 @@ window.addEventListener("load", function () {
         addDestinationInfo(document, planetSelection.name, planetSelection.diameter, planetSelection.star, planetSelection.distance, planetSelection.moons, planetSelection.image);
     })
 
-    // **************** THIS CODE WORKS TOO AND MAKES WAYYYYY MORE SENSE! ****************
-
-    // myFetch().then(function (response) {
-    //     let planetSelection = pickPlanet(response);
-    //     addDestinationInfo(document, planetSelection.name, planetSelection.diameter, planetSelection.star, planetSelection.distance, planetSelection.moons, planetSelection.image);
-    // })
-
     let submitForm = document.querySelector("form");
     submitForm.addEventListener("submit", function (event) {
 
