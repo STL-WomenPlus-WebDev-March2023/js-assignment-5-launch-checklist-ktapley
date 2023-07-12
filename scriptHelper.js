@@ -28,7 +28,6 @@ function validateInput(testInput) {
     }
 }
 
-
 function formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass) {
 
     let pilotStatus = document.getElementById("pilotStatus");
