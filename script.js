@@ -2,10 +2,23 @@
 
 window.addEventListener("load", function () {
 
-    myFetch().then(function (response) {
-        let planetSelection = pickPlanet(response);
+    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanets;
+    let listedPlanetsResponse = myFetch();
+    listedPlanetsResponse.then(function (response) {
+        listedPlanets = response;
+    }).then(function () {
+        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+        let planetSelection = pickPlanet(listedPlanets);
         addDestinationInfo(document, planetSelection.name, planetSelection.diameter, planetSelection.star, planetSelection.distance, planetSelection.moons, planetSelection.image);
     })
+
+    // **************** THIS CODE WORKS TOO AND MAKES WAYYYYY MORE SENSE! ****************
+
+    // myFetch().then(function (response) {
+    //     let planetSelection = pickPlanet(response);
+    //     addDestinationInfo(document, planetSelection.name, planetSelection.diameter, planetSelection.star, planetSelection.distance, planetSelection.moons, planetSelection.image);
+    // })
 
     let submitForm = document.querySelector("form");
     submitForm.addEventListener("submit", function (event) {
