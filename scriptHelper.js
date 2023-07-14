@@ -29,7 +29,7 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass) {
-
+    // debugger;
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
     let fuelStatus = document.getElementById("fuelStatus");
@@ -56,13 +56,13 @@ function formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel
         faultyItems.style.visibility = "visible";
         fuelStatus.innerHTML = "Fuel too low for launch";
     }
-    else if (cargoMass.value > 10000) {
+    if (cargoMass.value > 10000) {
         faultyItems.style.visibility = "visible";
         cargoStatus.innerHTML = "Cargo mass too high for launch";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color = "red";
     }
-    else {
+    if (fuelLevel.value >= 10000 && cargoMass.value <= 10000) {
         launchStatus.innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = "green";
         faultyItems.style.visibility = "visible";
@@ -83,8 +83,8 @@ function pickPlanet(planets) {
     return planetSelection;
 }
 
-  module.exports.addDestinationInfo = addDestinationInfo;
-  module.exports.validateInput = validateInput;
-  module.exports.formSubmission = formSubmission;
-  module.exports.pickPlanet = pickPlanet;
-  module.exports.myFetch = myFetch;
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet;
+module.exports.myFetch = myFetch;
